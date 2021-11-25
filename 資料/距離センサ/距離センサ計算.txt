@@ -1,0 +1,45 @@
+ //10~80cm      2.5~0.4V                                   4~30cm   0.3 ~ 3.1V
+ //SensorValue between 80(80) to 500(10)               SensorValue between 80 to 530
+ // Distance (cm) = 4800/(SensorValue - 20)         //Distance (cm) = 2076/(SensorValue - 11)
+    Volt =  (5/1024)*valueM1;      　　　　　　　　　//  Volt =  (5/1024*)valueM1;   　　
+      SV = 150*Volt + 35   //SVセンサ値　　　　　　　// SV = 450/2.8*Volt + 31.78571428714285714; 
+      valueD =  4800/(SV - 20);　//D距離   　　　　　 // valueD = 2076/(SV - 11);
+                              
+
+V=円周率（3.14）×直径（Dmm）×N（rpm）/10
+ｒ/ｍ（rpm）＝一分間に回転する回数
+
+タイヤ　５ｃｍ
+duty
+300 27rpm          13rpm
+400 40rpm  34rpm   6rpm
+500 55rpm  36rpm   14
+600 69rpm  54rpm   15rpm
+700 82rpm  71rpm   9
+800 93rpm  85rpm   8
+900 106rpm 94rpm   9
+1000 119  107     13
+100 13rpm
+1   0.013rpm
+100/13 1rpm
+毎秒１ｃｍの速さの場合
+1 = 3.14*5* N/60
+N = 3.819718634205rpm  60/(3.14*5)rpm
+
+duty = 100/13 * 60/(3.14*5) * v1
+
+56rpm
+61rpm
+66rpm 
+
+100duty 5rpm   
+
+
+フィードバック制御
+OUT　動かすスピード
+Xm　今の位置
+Xd　目標位置
+Kp　比例ゲイン 
+OUT ＝　－Kp（Xm－Xｄ）
+
+31.75mm
